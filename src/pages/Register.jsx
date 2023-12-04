@@ -36,7 +36,7 @@ function Register() {
                 
             });
             setIsloading(false);
-            navigate('/todolist');
+            navigate('/todolist/all');
        
            } 
            catch(error)
@@ -60,7 +60,7 @@ function Register() {
             <Box
             width='300px'
             height='300px'
-            sx={{ borderRadius:'10px' , alignItems:'center' , justifyContent:'center' , display:'flex' , flexDirection:'column' , backdropFilter:'blur(20px)' , boxShadow:'1px 1px 5px 2px black'}}
+            sx={{ borderRadius:'10px' , alignItems:'center' , justifyContent:'center' , display:'flex' , flexDirection:'column' , backdropFilter:'blur(10px)' , boxShadow:'1px 1px 5px 2px black'}}
         >   
             <CircularProgress size='100px' color='success'  sx={{ marginBottom:'10px' }} />
             <Typography variant='h4' color="white" >Registering....</Typography>
