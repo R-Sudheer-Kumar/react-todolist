@@ -6,9 +6,6 @@ import { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import { useAuth } from '../FirebaseAuth';
 import { updateProfile } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-import { db } from '../firebase.utils';
-
 
 function Register() {
     const [showPassword , setShowPassword] = useState(false);
