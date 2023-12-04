@@ -2,11 +2,10 @@ import { Box, Button, CircularProgress, Icon, IconButton, InputAdornment, Paper,
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import KeyboardDoubleArrowRightOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowRightOutlined';
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { createContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Todos from './Todos';
 import { useAuth } from '../FirebaseAuth';
 
 function Login() {
@@ -14,10 +13,8 @@ function Login() {
     const [email , setEmail] = useState('');
     const [pass , setPass] = useState('');
     const navigate = useNavigate();
-    const usercontext = createContext();
     const {Authlogin} = useAuth();
     const [isloading , setIsloading] = useState(false);
-
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -25,24 +22,23 @@ function Login() {
             setIsloading(true);
             await Authlogin(email , pass);
             setIsloading(false);
-            navigate('/todolist/all');
+            navigate('/todolist/user');
         }
         catch(error){
             setIsloading(false);
             alert(error)
-            .then(navigate('/'));
+            navigate('/');
         }
   
     }
   return (
-    <>
-  
-    
+    <>  
     <Box
     component="div"  
           height="100vh"
         sx={{ background:'url("/Images/background-1.jpg")' , backgroundRepeat:'no-repeat' , backgroundSize:'cover' , backgroundPosition:'center' , display:'flex',justifyContent:'center', alignItems:'center' }}
     >
+  
           {
         isloading ? 
             <Box

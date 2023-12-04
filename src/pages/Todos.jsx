@@ -1,8 +1,6 @@
-import styled from "@emotion/styled";
 import {
   Box,
   Button,
-  CircularProgress,
   IconButton,
   Paper,
   Stack,
@@ -28,16 +26,17 @@ import {
   onSnapshot,
   orderBy,
   query,
-  setDoc,
   updateDoc,
   where,
 } from "firebase/firestore";
 import { db } from "../firebase.utils";
-import Navbar, { useNav } from "../components/Navbar";
-import { useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import RestoreIcon from "@mui/icons-material/Restore";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Todos() {
   const { currentUser } = useAuth();
@@ -47,6 +46,41 @@ function Todos() {
   const [isedit, setIsedit] = useState(false);
   const [isType, setIsType] = useState(null);
   const { type } = useParams();
+  const navigate  = useNavigate();
+
+
+  const errorToast = () => {
+    toast.error('Task Deleted Successfully', {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+}
+const successToast = () => {
+  toast.success('Successfully Logged In', {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+}
+
+function firstLogin(){
+  successToast();
+  navigate('/todolist/all');
+}
+window.onload = () => {
+  navigate('/todolist/all');
+}
 
   const handleAdd = () => {
     if (isedit) {
@@ -62,6 +96,7 @@ function Todos() {
   const handleDelete =  (e, id) => {
     const ref = doc(db, "users", userId, "data", id);
      deleteDoc(ref);
+     errorToast();
     fetchData();
   };
 
@@ -83,7 +118,11 @@ function Todos() {
   };
 
   function fetchData(){
-    setIsType(type === "all" ? null : type);
+    if(type === 'user')
+    {
+      firstLogin();
+    }
+    setIsType(type === "all" ? null : type );
 
     if (userId) {
       if (isType !== null) {
@@ -98,18 +137,29 @@ function Todos() {
         onSnapshot(q, (snapshot) => {
           setTodos(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         });
+      
       }
-    } else {
-      setTodos([{ message: "Tis is a text message write your own message" }]);
     }
   }
   useEffect(() => {
     fetchData();
-  }, [userId, isType, type, message,fetchData()]);
+  }, [userId, isType, type, message]);
 
   return (
     <>
       <Navbar />
+      <ToastContainer
+position="top-right"
+autoClose={2500}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
       <Box
         width="100%"
         min-height="100vh"
@@ -218,6 +268,9 @@ function Todos() {
                       </TableRow>
                     </TableHead>
                     <TableBody>
+                      {
+                        todos.length==0 ? <h1>No tasks</h1> : null
+                      }
                       {todos.map((todo) => {
                         return (
                           <TableRow

@@ -18,11 +18,13 @@ import Backicon from "@mui/icons-material/KeyboardBackspace";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
+import { useAuth } from "../FirebaseAuth";
 
 function Navbar() {
   const [anchor, setAnchor] = useState(undefined);
   const navigate = useNavigate();
   const open = Boolean(anchor);
+  const {currentUser} = useAuth();
 
   return (
     <Box
@@ -85,7 +87,7 @@ function Navbar() {
             setAnchor(e.currentTarget);
           }}
         >
-          sudheer kumar
+          {currentUser? currentUser.displayName : "Test"}
         </Button>
       </Tooltip>
       <Menu
