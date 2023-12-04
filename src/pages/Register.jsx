@@ -36,7 +36,7 @@ function Register() {
                 
             });
             setIsloading(false);
-            navigate('/todolist/all');
+            navigate('/todolist/user');
        
            } 
            catch(error)
