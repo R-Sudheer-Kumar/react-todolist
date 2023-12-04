@@ -41,6 +41,7 @@ function Register() {
            } 
            catch(error)
            {
+            setIsloading(false);
             alert(error.message);
             navigate('/');
            }

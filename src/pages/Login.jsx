@@ -28,6 +28,7 @@ function Login() {
             navigate('/todolist/all');
         }
         catch(error){
+            setIsloading(false);
             alert(error)
             .then(navigate('/'));
         }
