@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useInsertionEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {auth} from './firebase.utils';
 import {  signInWithEmailAndPassword , createUserWithEmailAndPassword, onAuthStateChanged, updateProfile  } from 'firebase/auth';
 
@@ -35,7 +35,7 @@ export function AuthProvider( {children} )
         return updateProfile(currentUser , {displayName:"sudheer"});
     }
     useEffect( () => {
-        const unsubscribe = onAuthStateChanged(auth ,  (user) => {
+        onAuthStateChanged(auth ,  (user) => {
             setCurrentUser(user);
         });
     

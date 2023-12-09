@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Icon, IconButton, InputAdornment, Paper, Stack, TextField, Typography,Image, circularProgressClasses } from '@mui/material';
+import { Box, Button, CircularProgress, Icon, IconButton, InputAdornment, Paper, Stack, TextField, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import KeyboardDoubleArrowRightOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowRightOutlined';
@@ -14,7 +14,6 @@ function Register() {
     const [uname , setUname] = useState();
     const [email , setEmail] = useState();
     const {signup} = useAuth();
-    const {UpdateUser} = useAuth();
     const navigate = useNavigate();
     const [isloading , setIsloading] = useState(false);
 

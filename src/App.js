@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Todos from './pages/Todos';
 import { AuthProvider } from './FirebaseAuth';
-import { createMuiTheme, createTheme , ThemeProvider } from '@mui/material';
+import {  createTheme , ThemeProvider } from '@mui/material';
 
 function App() {
   const theme = createTheme(

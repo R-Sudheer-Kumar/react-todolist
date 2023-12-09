@@ -2,9 +2,8 @@ import { Box, Button, CircularProgress, Icon, IconButton, InputAdornment, Paper,
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import KeyboardDoubleArrowRightOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowRightOutlined';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import React, { createContext, useState } from 'react';
+import React, {  useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../FirebaseAuth';
 

@@ -31,7 +31,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase.utils";
 import Navbar from "../components/Navbar";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import RestoreIcon from "@mui/icons-material/Restore";
@@ -269,7 +269,7 @@ theme="light"
                     </TableHead>
                     <TableBody>
                       {
-                        todos.length==0 ? <h1>No tasks</h1> : null
+                        todos.length===0 ? <h1>No tasks</h1> : null
                       }
                       {todos.map((todo) => {
                         return (

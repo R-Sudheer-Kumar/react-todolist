@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Button, CircularProgress, Paper, Stack, Typography} from '@mui/material';
+import {Box, Button, Paper, Stack, Typography} from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function Home(){
