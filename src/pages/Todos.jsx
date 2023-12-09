@@ -73,9 +73,8 @@ function Todos() {
   };
 
   function firstLogin() {
-    navigate("/todolist/all");
-    successToast();
-    
+    navigate("/todolist/all")
+    .then(successToast()); 
   }
   window.onload = () => {
     navigate("/todolist/all");
