@@ -14,7 +14,7 @@ function Home(){
             sx={{ width: { xs :'300px' , sm: '500px'} , height:'300px' , borderRadius:'20px' , textAlign:'center' , p:{xs : '0px' , sm:'10px'} , boxShadow:'1px 1px 5px 1px rgba(0,0,0,0.5)'  , backdropFilter:'blur(10px)' , background: "transparent" }}
             elevation={10}
             >
-                <Stack spacing="30px" sx={{ padding:{xs: '20%' , sm:"25px 100px"} }}
+                <Stack spacing="30px" sx={{ padding:{xs: '10%' , sm:"25px 100px"} }}
                 
                 >
                     <Typography variant='h4' color='error' fontWeight='700' >Todo List</Typography>

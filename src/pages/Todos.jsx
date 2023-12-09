@@ -75,7 +75,6 @@ function Todos() {
   function firstLogin() {
     navigate("/todolist/all");
     successToast();
-    fetchData();
   }
   window.onload = () => {
     navigate("/todolist/all");
@@ -158,7 +157,7 @@ function Todos() {
       />
       <Box
         width="100%"
-        min-height="100vh"
+        minHeight="100vh"
         sx={{
           display: "flex",
           flexDirection: "column",
