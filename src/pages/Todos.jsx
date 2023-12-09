@@ -73,8 +73,9 @@ function Todos() {
   };
 
   function firstLogin() {
-    successToast();
     navigate("/todolist/all");
+    successToast();
+    
   }
   window.onload = () => {
     navigate("/todolist/all");
@@ -136,38 +137,9 @@ function Todos() {
     }
   }
   useEffect(() => {
-    function fetchData() {
-      if (type === "user") {
-        function firstLogin() {
-          successToast();
-          navigate("/todolist/all");
-        }
-        firstLogin();
-      }
-      setIsType(type === "all" ? null : type);
-
-      if (userId) {
-        if (isType !== null) {
-          const ref = collection(db, "users", userId, "data");
-          const q = query(ref, where("status", "==", isType));
-          onSnapshot(q, (snapshot) => {
-            setTodos(
-              snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            );
-          });
-        } else {
-          const ref = collection(db, "users", userId, "data");
-          const q = query(ref, orderBy("status", "desc"));
-          onSnapshot(q, (snapshot) => {
-            setTodos(
-              snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            );
-          });
-        }
-      }
-    }
+  
     fetchData();
-  }, [userId, isType, type, message, navigate]);
+  }, [userId, isType, type, message]);
 
   return (
     <>

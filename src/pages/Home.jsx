@@ -18,19 +18,23 @@ function Home(){
                 
                 >
                     <Typography variant='h4' color='error' fontWeight='700' >Todo List</Typography>
+                    <Link to='/login' style={{textDecoration:'none' , color:'white'}}>
                     <Button variant='contained' size='large'
-                     sx={{fontSize:'20px' , fontWeight:'600', '&:hover':{
+                     sx={{fontSize:'20px', width:'250px' , fontWeight:'600', '&:hover':{
                         backgroundColor:'orange'
                     }}}
                     >
-                        <Link to='/login' style={{textDecoration:'none' , color:'white'}}>LOGIN</Link>
+                        LOGIN
                     </Button>
+                    </Link>
+                    <Link to='/register' style={{textDecoration:'none' , color:'white'}}>
                     <Button variant='contained' size='large' 
-                    sx={{fontSize:'20px' , fontWeight:'600', '&:hover':{
+                    sx={{fontSize:'20px' , width:'250px' , fontWeight:'600', '&:hover':{
                         backgroundColor:'orange'
                     }}}>
-                         <Link to='/register' style={{textDecoration:'none' , color:'white'}}>REGISTER</Link>
+                         REGISTER
                     </Button>
+                    </Link>
 
                 </Stack>
             </Paper>
