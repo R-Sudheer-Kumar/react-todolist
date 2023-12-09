@@ -317,7 +317,6 @@ theme="light"
 
                             {todo.status === "completed" ? (
                               <TableCell align="right">
-                                <Tooltip title="completed">
                                   <span>
                                   <IconButton
                                       sx={{ marginRight: {xs:'0' , sm: "2px" }}}
@@ -329,8 +328,6 @@ theme="light"
                                     />
                                   </IconButton>
                                   </span>
-                                </Tooltip>
-                                <Tooltip title="undo">
                                   <IconButton
                                         sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     onClick={(e) => {
@@ -342,9 +339,7 @@ theme="light"
                                       sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
-                                </Tooltip>
 
-                                <Tooltip title="delete">
                                   <IconButton
                                     onClick={(e) => {
                                       handleDelete(e, todo.id);
@@ -355,11 +350,10 @@ theme="light"
                                       sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
-                                </Tooltip>
                               </TableCell>
                             ) : (
                               <TableCell align="right">
-                                <Tooltip title="complete">
+
                                   <IconButton
                                         sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     onClick={(e) => {
@@ -371,8 +365,7 @@ theme="light"
                                       sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
-                                </Tooltip>
-                                <Tooltip title="update">
+
                                   <IconButton
                                     sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     onClick={(e) => {
@@ -384,8 +377,7 @@ theme="light"
                                       
                                     />
                                   </IconButton>
-                                </Tooltip>
-                                <Tooltip title="delete">
+
                                   <IconButton
                                     onClick={(e) => {
                                       handleDelete(e, todo.id);
@@ -396,9 +388,6 @@ theme="light"
                                       sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
-                                </Tooltip>
-                         
-                         
                          
                               </TableCell>
                             )}
