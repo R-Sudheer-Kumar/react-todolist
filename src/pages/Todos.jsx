@@ -180,7 +180,7 @@ theme="light"
           elevation={5}
           sx={{
             padding: "15px",
-            width: "700px",
+            width: {xs:'420px' , sm:"680px"},
             height: "562px",
             display: "flex",
             borderRadius:'10px',
@@ -208,16 +208,16 @@ theme="light"
             </Typography>
 
             
-              <Stack spacing={3}>
+              <Stack spacing={3} width='100%'>
                 <Box
-                  width='650px'
+                  sx={{ width:{xs:'380px' , sm:'650px'} }}
                 >
                   <TextField
                     type="text"
                     placeholder="Start typing here......"
                     size="small"
                     InputLabelProps={{ shrink: false }}
-                    sx={{ width: "80%" , backgroundColor:'white' , fontSize:'16px' }}
+                    sx={{ width: "75%" , backgroundColor:'white' , fontSize:'16px' }}
                     value={message}
                     onChange={(e) => {
                       setMessage(e.target.value);
@@ -230,9 +230,9 @@ theme="light"
                     color="success"
                     size="medium"
                     sx={{
-                      marginLeft: "8px",
+                      marginLeft: "5px",
                       "&:hover": { backgroundColor: "blue" },
-                      fontSize: "16px",
+                      fontSize: {xs:'14px' , sm:'16px'},
                     }}
                     onClick={handleAdd}
                     disabled={!message ? true : false}
@@ -243,7 +243,7 @@ theme="light"
                 </Box>
                 <TableContainer component={Paper} sx={{ maxHeight: "420px" }}>
                   <Table
-                    sx={{ width: "650px", marginLeft: "-5px" }}
+                    sx={{ width: {xs:'390px' , sm:'650px'}, marginLeft: "-5px" }}
                     size="small"
                     stickyHeader
                   >
@@ -260,11 +260,11 @@ theme="light"
                           },
                         }}
                       >
-                        <TableCell color="white" colSpan="2" width='250px'>
+                        <TableCell color="white" colSpan="2" width='60%'>
                           Tasks
                         </TableCell>
 
-                        <TableCell width='200px'></TableCell>
+                        <TableCell width='100%'></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -292,26 +292,26 @@ theme="light"
                                 <Tooltip title="completed">
                                   <span>
                                   <IconButton
-                                    sx={{ marginRight: "2px" }}
+                                      sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     disabled                                    
                                   >
                                     <CheckCircleIcon
                                       color="success"
-                                      fontSize="medium"
+                                      sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
                                   </span>
                                 </Tooltip>
                                 <Tooltip title="undo">
                                   <IconButton
-                                    sx={{ marginRight: "2px" }}
+                                        sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     onClick={(e) => {
                                       handleUndo(todo.id);
                                     }}
                                   >
                                     <RestoreIcon
                                       color="info"
-                                      fontSize="medium"
+                                      sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
                                 </Tooltip>
@@ -324,7 +324,7 @@ theme="light"
                                   >
                                     <DeleteIcon
                                       color="error"
-                                      fontSize="medium"
+                                      sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
                                 </Tooltip>
@@ -333,27 +333,27 @@ theme="light"
                               <TableCell align="right">
                                 <Tooltip title="complete">
                                   <IconButton
-                                    sx={{ marginRight: "2px" }}
+                                        sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     onClick={(e) => {
                                       handleComplete(todo.id);
                                     }}
                                   >
                                     <CheckCircleOutlineIcon
                                       color="success"
-                                      fontSize="medium"
+                                      sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
                                 </Tooltip>
                                 <Tooltip title="update">
                                   <IconButton
-                                    sx={{ marginRight: "2px" }}
+                                    sx={{ marginRight: {xs:'0' , sm: "2px" }}}
                                     onClick={(e) => {
                                       handleEdit(todo.id, todo.message);
                                     }}
                                   >
                                     <EditIcon
-                                      fontSize="medium"
-                                      sx={{ color: "black" }}
+                                      sx={{ fontSize:{xs:'18px' , sm:'23px'} , color:'black' }}
+                                      
                                     />
                                   </IconButton>
                                 </Tooltip>
@@ -365,7 +365,7 @@ theme="light"
                                   >
                                     <DeleteIcon
                                       color="error"
-                                      fontSize="medium"
+                                      sx={{ fontSize:{xs:'18px' , sm:'23px'} }}
                                     />
                                   </IconButton>
                                 </Tooltip>

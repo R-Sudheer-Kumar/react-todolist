@@ -49,12 +49,12 @@ function Navbar() {
           navigate("/");
         }}
       >
-        <Backicon fontSize="large" sx={{ fontSize: "40px" }} color="white" />
+        <Backicon fontSize="large" sx={{ fontSize: {xs:'30px' , sm:"40px"} }} color="white" />
       </IconButton>
       <Typography
         variant="h4"
         fontFamily="Open Sans"
-        sx={{ marginRight: "-16%" }}
+        sx={{ marginRight:{xs:'-8%' , sm:"-16%"} , fontSize:{xs:'20px' , sm:'30px'} }}
       >
         TODO LIST
       </Typography>
@@ -66,8 +66,8 @@ function Navbar() {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
               sx={{
-                width: "30px",
-                height: "30px",
+                width: {xs:'25px' , sm:"30px"},
+                height: {xs:'25px' , sm:"30px"},
                 background: "orange",
                 "&:hover": { cursor: "pointer" },
                 position: "relative",
@@ -76,11 +76,11 @@ function Navbar() {
           }
           sx={{
             color: "red",
-            maxWidth: "15%",
-            height: "45px",
-            marginRight: "-20px",
+            maxWidth: {xs:"27%" , sm:'22%'},
+            height: "40px",
+            marginRight: "-22px",
             overflow: "hidden",
-            fontSize: "14px",
+            fontSize: {xs:'10px' , sm:"14px"},
             "&:hover": { backgroundColor: "rgba(125,125,125,0.4)" },
           }}
           onClick={(e) => {
