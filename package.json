@@ -23,8 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:deploy": "env-cmd -f .env.local npm run build && firebase deploy -P rsudheerportfolio"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
